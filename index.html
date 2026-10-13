@@ -1,0 +1,164 @@
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interestelar | Inicio</title>
+    <link rel="stylesheet" href="estilos.css">
+
+    <style>
+
+        * { /*Para qué sirve esto (*) en CSS
+            El asterisco (*) en CSS se utiliza como un selector de clase. Un selector de clase 
+            permite aplicar un conjunto de estilos a todos los elementos que tienen la misma 
+            clase en el documento HTML. Esto es útil para aplicar estilos generales a todo el documento 
+            o a un grupo específico de elementos. Por ejemplo, si tienes una clase de título que deseas 
+            estilizar, puedes usar un selector de clase para aplicar el estilo a todos los títulos en el 
+            documento. */
+
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Times New Roman', serif;
+            background-color: #101827;
+            color: white;
+        }
+
+        #encabezado {
+            background-color: #0b1220;
+            padding: 20px 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #263d5c;
+        }
+
+        #encabezado h2 {
+            font-size: 24px;
+            letter-spacing: 3px;
+        }
+
+        #menu a:hover {
+            color: #65c5e8;
+        }
+
+        #portada {
+            min-height: 520px;
+            padding: 100px 20px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: linear-gradient(180deg, #172943, #101827);
+        }
+
+        .etiqueta {
+            color: #76c9e8;
+            font-size: 14px;
+            letter-spacing: 3px;
+            margin-bottom: 25px;
+        }
+
+        #portada h1 {
+            font-size: 65px;
+            letter-spacing: 8px;
+            margin-bottom: 20px;
+        }
+
+        .frase {
+            color: #c7d2e2;
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 500px;
+        }
+
+        #botones {
+            margin-top: 35px;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 12px 24px;
+            color: white;
+            text-decoration: none;
+            border-radius: 4px;
+            transition: 0.2s;
+        }
+
+        .azul {
+            background-color: #326da8;
+        }
+
+        .morado {
+            background-color: #66518e;
+        }
+
+        .turquesa {
+            background-color: #288e91;
+        }
+
+        .boton:hover {
+            opacity: 0.8;
+        }
+
+        #pie {
+            background-color: #0b1220;
+            text-align: center;
+            padding: 20px;
+            border-top: 1px solid #263d5c;
+        }
+
+        #pie p {
+            color: #9eacc0;
+            font-size: 14px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="encabezado">
+        <h2>INTERESTELAR</h2>
+
+    </div>
+
+    <div id="portada">
+        <p class="etiqueta">UN VIAJE MÁS ALLÁ DEL TIEMPO</p>
+
+        <h1>INTERESTELAR</h1>
+
+        <p class="frase">
+            El amor es la única cosa que trasciende
+            el tiempo y el espacio.
+        </p>
+
+        <div id="botones">
+            <a class="boton azul" href="introduccion.html">
+                Introducción
+            </a>
+
+            <a class="boton morado" href="desarrollo.html">
+                Desarrollo
+            </a>
+
+            <a class="boton turquesa" href="conclusion.html">
+                Conclusión
+            </a>
+        </div>
+    </div>
+
+    <div id="pie">
+        <p>Proyecto escolar de HTML5 y CSS3</p>
+        <p>Interestelar (2014) · Christopher Nolan</p>
+    </div>
+
+</body>
+</html>
