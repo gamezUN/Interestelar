@@ -1,164 +1,557 @@
-
 <!DOCTYPE html>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interestelar | Inicio</title>
-    <link rel="stylesheet" href="estilos.css">
+    <title>Interestelar | Explorando el universo</title>
 
     <style>
-
-        * { /*Para qué sirve esto (*) en CSS
-            El asterisco (*) en CSS se utiliza como un selector de clase. Un selector de clase 
-            permite aplicar un conjunto de estilos a todos los elementos que tienen la misma 
-            clase en el documento HTML. Esto es útil para aplicar estilos generales a todo el documento 
-            o a un grupo específico de elementos. Por ejemplo, si tienes una clase de título que deseas 
-            estilizar, puedes usar un selector de clase para aplicar el estilo a todos los títulos en el 
-            documento. */
-
+        /* ESTILOS GENERALES */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: 'Times New Roman', serif;
-            background-color: #101827;
-            color: white;
+        html {
+            scroll-behavior: smooth;
         }
 
-        #encabezado {
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #101827;
+            color: white;
+            line-height: 1.6;
+        }
+
+        /* ENCABEZADO Y MENU */
+        header {
             background-color: #0b1220;
-            padding: 20px 40px;
+            padding: 18px 8%;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            border-bottom: 2px solid #263d5c;
+            flex-wrap: wrap;
+            border-bottom: 1px solid #344c6b;
         }
 
-        #encabezado h2 {
-            font-size: 24px;
+        header h2 {
             letter-spacing: 3px;
+            color: #76c9e8;
         }
 
-        #menu a:hover {
+        nav a {
+            display: inline-block;
+            color: #d6deeb;
+            text-decoration: none;
+            padding: 8px 12px;
+        }
+
+        nav a:hover {
             color: #65c5e8;
         }
 
-        #portada {
-            min-height: 520px;
-            padding: 100px 20px;
-            text-align: center;
+        /* PORTADA */
+        .portada {
+            min-height: 480px;
+            padding: 80px 20px;
+            background-image: linear-gradient(rgba(5, 12, 25, 0.35), rgba(5, 12, 25, 0.85)),
+                url("https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=1600");
+            background-size: cover;
+            background-position: center;
             display: flex;
             flex-direction: column;
             justify-content: center;
             align-items: center;
-            background: linear-gradient(180deg, #172943, #101827);
+            text-align: center;
         }
 
         .etiqueta {
             color: #76c9e8;
-            font-size: 14px;
-            letter-spacing: 3px;
-            margin-bottom: 25px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
         }
 
-        #portada h1 {
-            font-size: 65px;
+        .portada h1 {
+            font-size: 58px;
             letter-spacing: 8px;
-            margin-bottom: 20px;
+            margin-bottom: 15px;
         }
 
         .frase {
-            color: #c7d2e2;
-            font-size: 20px;
-            line-height: 1.6;
-            max-width: 500px;
-        }
-
-        #botones {
-            margin-top: 35px;
-            display: flex;
-            justify-content: center;
-            gap: 15px;
+            max-width: 600px;
+            color: #d6deeb;
+            font-size: 19px;
         }
 
         .boton {
             display: inline-block;
-            padding: 12px 24px;
+            margin-top: 25px;
+            padding: 11px 25px;
+            background-color: #326da8;
             color: white;
             text-decoration: none;
             border-radius: 4px;
-            transition: 0.2s;
-        }
-
-        .azul {
-            background-color: #326da8;
-        }
-
-        .morado {
-            background-color: #66518e;
-        }
-
-        .turquesa {
-            background-color: #288e91;
         }
 
         .boton:hover {
-            opacity: 0.8;
+            background-color: #24547f;
         }
 
-        #pie {
+        /* SECCIONES */
+        section {
+            padding: 55px 10%;
+        }
+
+        section h2 {
+            color: #76c9e8;
+            text-align: center;
+            margin-bottom: 25px;
+            font-size: 29px;
+        }
+
+        .texto {
+            max-width: 850px;
+            margin: auto;
+            color: #d6deeb;
+            text-align: justify;
+        }
+
+        .texto p {
+            margin-bottom: 16px;
+        }
+
+        /* DISPLAY BLOCK */
+        .bloque {
+            display: block;
+            background-color: #172943;
+            padding: 20px;
+            margin: 15px auto;
+            max-width: 850px;
+            border-left: 4px solid #76c9e8;
+            color: #d6deeb;
+        }
+
+        /* DISPLAY TABLE-CELL */
+        .ficha {
+            background-color: #0d1728;
+        }
+
+        .tabla {
+            display: table;
+            width: 100%;
+            border-spacing: 8px;
+        }
+
+        .celda {
+            display: table-cell;
+            width: 25%;
+            padding: 22px 12px;
+            background-color: #172943;
+            text-align: center;
+            border-radius: 4px;
+        }
+
+        .celda h3 {
+            color: #76c9e8;
+            margin-bottom: 8px;
+        }
+
+        /* DISPLAY INLINE-BLOCK */
+        .personajes {
+            text-align: center;
+        }
+
+        .tarjeta {
+            display: inline-block;
+            vertical-align: top;
+            width: 27%;
+            min-width: 190px;
+            margin: 10px;
+            padding: 15px;
+            background-color: #172943;
+            border: 1px solid #344c6b;
+            border-radius: 5px;
+            text-align: left;
+        }
+
+        .tarjeta img {
+            width: 100%;
+            height: 155px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .tarjeta h3 {
+            color: #76c9e8;
+            margin: 10px 0 5px;
+        }
+
+        .tarjeta p {
+            color: #d6deeb;
+            font-size: 15px;
+        }
+
+        /* PLANETAS */
+        .planetas {
+            background-color: #0d1728;
+        }
+
+        .planeta {
+            display: block;
+            max-width: 850px;
+            margin: 14px auto;
+            padding: 20px;
+            background-color: #172943;
+            border-radius: 4px;
+        }
+
+        .planeta h3 {
+            color: #76c9e8;
+            margin-bottom: 6px;
+        }
+
+        .planeta p {
+            color: #d6deeb;
+        }
+
+        /* FLEXBOX: FILA Y AJUSTE DE LINEA */
+        .galeria {
+            text-align: center;
+        }
+
+        .galeria-flex {
+            display: flex;
+            flex-flow: row wrap;
+            justify-content: center;
+            align-items: stretch;
+            gap: 18px;
+        }
+
+        .foto {
+            width: 220px;
+            padding: 10px;
+            background-color: #172943;
+            border-radius: 5px;
+        }
+
+        .foto img {
+            width: 100%;
+            height: 145px;
+            object-fit: cover;
+            border-radius: 4px;
+        }
+
+        .foto p {
+            color: #76c9e8;
+            margin-top: 8px;
+        }
+
+        /* EJEMPLOS DE DIRECCION FLEX */
+        .ejemplos-flex {
+            background-color: #0d1728;
+        }
+
+        .ejemplo {
+            max-width: 850px;
+            margin: 20px auto;
+        }
+
+        .ejemplo h3 {
+            color: #76c9e8;
+            margin-bottom: 10px;
+        }
+
+        .caja-flex {
+            display: flex;
+            gap: 8px;
+            padding: 10px;
+            background-color: #172943;
+            border: 1px solid #344c6b;
+            min-height: 65px;
+        }
+
+        .caja-flex span {
+            background-color: #326da8;
+            padding: 8px 16px;
+            border-radius: 3px;
+            text-align: center;
+        }
+
+        .fila {
+            flex-direction: row;
+        }
+
+        .fila-invertida {
+            flex-direction: row-reverse;
+        }
+
+        .columna {
+            flex-direction: column;
+        }
+
+        .columna-invertida {
+            flex-direction: column-reverse;
+        }
+
+        /* CONCLUSION */
+        .conclusion {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            gap: 25px;
+            background-color: #101827;
+        }
+
+        .conclusion h2,
+        .conclusion p {
+            flex: 1;
+        }
+
+        .conclusion p {
+            color: #d6deeb;
+            text-align: justify;
+        }
+
+        /* PIE DE PAGINA */
+        footer {
             background-color: #0b1220;
             text-align: center;
-            padding: 20px;
-            border-top: 1px solid #263d5c;
+            padding: 22px;
+            border-top: 1px solid #344c6b;
+            color: #9eacc0;
         }
 
-        #pie p {
-            color: #9eacc0;
+        footer p {
+            margin: 4px;
             font-size: 14px;
-            margin: 5px;
+        }
+
+        /* AJUSTES PARA PANTALLAS PEQUENAS */
+        @media (max-width: 700px) {
+            header {
+                justify-content: center;
+                text-align: center;
+                gap: 10px;
+            }
+
+            nav {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+
+            .portada h1 {
+                font-size: 38px;
+                letter-spacing: 4px;
+            }
+
+            .tabla {
+                display: block;
+            }
+
+            .celda {
+                display: block;
+                width: 100%;
+                margin-bottom: 8px;
+            }
+
+            .tarjeta {
+                width: 85%;
+            }
+
+            .conclusion {
+                flex-direction: column;
+            }
+
+            .columna-invertida {
+                flex-direction: column-reverse;
+            }
         }
     </style>
 </head>
+
 <body>
 
-    <div id="encabezado">
+    <header id="inicio">
         <h2>INTERESTELAR</h2>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#pelicula">La película</a>
+            <a href="#ficha">Ficha técnica</a>
+            <a href="#personajes">Personajes</a>
+            <a href="#galeria">Galería</a>
+            <a href="#flexbox">Flexbox</a>
+        </nav>
+    </header>
 
-    </div>
-
-    <div id="portada">
+    <div class="portada">
         <p class="etiqueta">UN VIAJE MÁS ALLÁ DEL TIEMPO</p>
-
         <h1>INTERESTELAR</h1>
-
-        <p class="frase">
-            El amor es la única cosa que trasciende
-            el tiempo y el espacio.
-        </p>
-
-        <div id="botones">
-            <a class="boton azul" href="introduccion.html">
-                Introducción
-            </a>
-
-            <a class="boton morado" href="desarrollo.html">
-                Desarrollo
-            </a>
-
-            <a class="boton turquesa" href="conclusion.html">
-                Conclusión
-            </a>
-        </div>
+        <p class="frase">El amor es la única cosa que trasciende el tiempo y el espacio.</p>
+        <a class="boton" href="#pelicula">Conocer la película</a>
     </div>
 
-    <div id="pie">
+    <main>
+
+        <section id="pelicula">
+            <h2>Un viaje más allá de las estrellas</h2>
+            <div class="texto">
+                <p>
+                    Interestelar es una película de ciencia ficción estrenada en 2014
+                    y dirigida por Christopher Nolan. Presenta un futuro en el que la
+                    Tierra enfrenta problemas ambientales que amenazan la supervivencia
+                    de la humanidad.
+                </p>
+                <p>
+                    La historia sigue a Cooper, un antiguo piloto que participa en una
+                    misión espacial para encontrar un planeta donde las personas puedan
+                    vivir. Durante su viaje descubre fenómenos relacionados con la
+                    gravedad, el tiempo y el espacio.
+                </p>
+                <p>
+                    Elegí esta película porque despertó mi interés por la ingeniería
+                    y especialmente por la ingeniería aeroespacial. También me hizo
+                    pensar en todo lo que podemos crear mediante la ciencia y la tecnología.
+                </p>
+            </div>
+        </section>
+
+        <section class="ficha" id="ficha">
+            <h2>Ficha técnica</h2>
+            <div class="tabla">
+                <div class="celda">
+                    <h3>Director</h3>
+                    <p>Christopher Nolan</p>
+                </div>
+                <div class="celda">
+                    <h3>Año</h3>
+                    <p>2014</p>
+                </div>
+                <div class="celda">
+                    <h3>Género</h3>
+                    <p>Ciencia ficción y drama</p>
+                </div>
+                <div class="celda">
+                    <h3>Música</h3>
+                    <p>Hans Zimmer</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="personajes" id="personajes">
+            <h2>Personajes principales</h2>
+
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600" alt="La Tierra vista desde el espacio">
+                <h3>Cooper</h3>
+                <p>Es un piloto e ingeniero que participa en la misión para encontrar un nuevo hogar para la humanidad.</p>
+            </div>
+
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600" alt="Estrellas y nebulosa">
+                <h3>Murph</h3>
+                <p>Es la hija de Cooper. Su inteligencia y curiosidad científica son importantes para resolver el problema de la Tierra.</p>
+            </div>
+
+            <div class="tarjeta">
+                <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?w=600" alt="Galaxia en el espacio">
+                <h3>Amelia Brand</h3>
+                <p>Es una científica que acompaña a Cooper durante la misión de exploración espacial.</p>
+            </div>
+        </section>
+
+        <section class="planetas">
+            <h2>Los mundos explorados</h2>
+
+            <div class="planeta">
+                <h3>Planeta Miller</h3>
+                <p>Es un planeta cubierto de agua donde el tiempo transcurre de manera diferente debido a la gravedad de Gargantúa.</p>
+            </div>
+
+            <div class="planeta">
+                <h3>Planeta Mann</h3>
+                <p>Es un mundo congelado que parecía ser una opción para establecer una nueva colonia humana.</p>
+            </div>
+
+            <div class="planeta">
+                <h3>Planeta Edmunds</h3>
+                <p>Es un planeta que presenta condiciones favorables para convertirse en un nuevo hogar para la humanidad.</p>
+            </div>
+        </section>
+
+        <section class="galeria" id="galeria">
+            <h2>Galería espacial</h2>
+            <div class="galeria-flex">
+                <div class="foto">
+                    <img src="https://images.unsplash.com/photo-1462331940025-496dfbfc7564?w=600" alt="Nebulosa">
+                    <p>El universo</p>
+                </div>
+                <div class="foto">
+                    <img src="https://images.unsplash.com/photo-1446776811953-b23d57bd21aa?w=600" alt="Planeta visto desde el espacio">
+                    <p>Otros mundos</p>
+                </div>
+                <div class="foto">
+                    <img src="https://images.unsplash.com/photo-1464802686167-b939a6910659?w=600" alt="Galaxia">
+                    <p>Las galaxias</p>
+                </div>
+                <div class="foto">
+                    <img src="https://images.unsplash.com/photo-1465101162946-4377e57745c3?w=600" alt="Estrellas">
+                    <p>Las estrellas</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="ejemplos-flex" id="flexbox">
+            <h2>Probando Flexbox</h2>
+            <p class="texto">Flexbox permite organizar elementos en filas o columnas. También podemos invertir su dirección según el diseño que necesitemos.</p>
+
+            <div class="ejemplo">
+                <h3>Fila (row)</h3>
+                <div class="caja-flex fila">
+                    <span>1</span><span>2</span><span>3</span>
+                </div>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Fila invertida (row-reverse)</h3>
+                <div class="caja-flex fila-invertida">
+                    <span>1</span><span>2</span><span>3</span>
+                </div>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Columna (column)</h3>
+                <div class="caja-flex columna">
+                    <span>1</span><span>2</span><span>3</span>
+                </div>
+            </div>
+
+            <div class="ejemplo">
+                <h3>Columna invertida (column-reverse)</h3>
+                <div class="caja-flex columna-invertida">
+                    <span>1</span><span>2</span><span>3</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="conclusion">
+            <h2>Una historia que va más allá del espacio</h2>
+            <p>
+                Interestelar combina ciencia ficción, exploración espacial y sentimientos
+                humanos. Personalmente, me hizo interesarme más por la ingeniería y por
+                todo lo que podemos aprender sobre el universo. Considero que la película
+                nos invita a explorar, aprender y buscar respuestas incluso cuando algo
+                parece imposible.
+            </p>
+        </section>
+
+    </main>
+
+    <footer>
         <p>Proyecto escolar de HTML5 y CSS3</p>
         <p>Interestelar (2014) · Christopher Nolan</p>
-    </div>
+    </footer>
 
 </body>
 </html>
